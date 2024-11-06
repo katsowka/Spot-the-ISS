@@ -13,7 +13,7 @@ num_passes_txt = "Number of ISS passes within stated timeframe:"
 
 file_title_txt = f"{' '*10}* Spot the ISS: SUMMARY REPORT *\n\n"
 
-happy_spotting_txt = "* Happy ISS spotting! *"
+happy_spotting_txt = "* Happy ISS spotting! *" ### not used now - use or get rid of
 
 end_txt = ("Note: ISS data obtained from G7VRD's public satellite pass API, found at\n"
            "https://g7vrd.co.uk/public-satellite-pass-rest-api")

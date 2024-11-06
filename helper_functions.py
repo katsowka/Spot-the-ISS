@@ -85,10 +85,12 @@ def process_pass(pass_response):
             "max_elev": str(int(pass_response['max_elevation']))}
 
 
-def process_passes(num_all_passes, all_passes, file_txt):
+def process_passes(num_all_passes, all_passes):
     # processes list of ISS pass data as found within API response
     # prints all formatted pass information to console
     # returns string of all pass information to be used in report file
+    passes_txt = ""
+
     for x in range(num_all_passes):
         pass_dict = process_pass(all_passes[x])
         day_long = pass_dict["day_long"]
@@ -102,9 +104,8 @@ def process_passes(num_all_passes, all_passes, file_txt):
                     f"The ISS will appear from the {dir_rise} at {time_rise}, and set in"
                     f" the {dir_set} at {time_set}. \nIt will peak at {time_peak} with a "
                     f"maximum elevation of {max_elev}\N{DEGREE SIGN}.\n")
-        file_txt += pass_txt + "\n"
-        print(pass_txt)
-    return file_txt
+        passes_txt += pass_txt + "\n"
+    return passes_txt
 
 
 def make_report(city, hours, request_date_short, file_txt, end_txt):
